@@ -16,7 +16,7 @@ app.use(
 
 const MONGODB_URI = process.env.MONGO_URI; 
 
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect("mongodb+srv://mark:mark@kariuki-estate.utqja4d.mongodb.net/kariuki-estate?retryWrites=true&w=majority&appName=kariuki-estate")
   .then(() => {
     console.log("Connected to MongoDB");
   })
