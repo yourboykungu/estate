@@ -26,6 +26,8 @@ export default function signin() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
+        withCredentials: true, 
+        credentials: 'include'
       });
 
       const data = await res.json(); // Wait for JSON data
@@ -79,5 +81,5 @@ export default function signin() {
       </div>
       {error && <p className="text-red-500 mt-5">{error}</p>}
     </div>
-  );
+  ); 
 }
