@@ -64,3 +64,12 @@ if (user) {
     next(error);
   }
 }
+
+export const signout= async(req,res,next) => {
+  try {
+    res.clearCookie('access_token');
+    res.status(200).json("use has logged out");
+  } catch (error) {
+    nexy(error)
+  }
+}
