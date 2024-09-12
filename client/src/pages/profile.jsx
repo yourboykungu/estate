@@ -19,6 +19,7 @@ import {
   signOutUserFailure
 } from "../../redux/user/userSlice.js";
 import { useDispatch } from 'react-redux';
+import { Link } from "react-router-dom";
 
 export default function profile() {
   const { currentUser, loading, error } = useSelector((state) => state.user);
@@ -138,9 +139,9 @@ export default function profile() {
   }
 
   return (
-    <div className="p-3 max-w-lg mx-auto">
+    <div className="p-3 max-w-lg mx-auto ">
       <h1 className="text-3xl font-semibold text-center">profile</h1>
-      <form onSubmit={handleSubmit} className="flex flex-col">
+      <form onSubmit={handleSubmit} className="flex flex-col gap-2">
         <input
           onChange={(e) => setFile(e.target.files[0])}
           type="file"
@@ -194,6 +195,11 @@ export default function profile() {
         >
           {loading ? "loading..." : "update"}
         </button>
+        <Link to="/create-listing"
+          className="bg-green-700 text-white text-center rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80"
+        >
+          create listing
+        </Link>
       </form>
       <div className="flex justify-between mt-5">
         <span onClick={handleDeleteUser} className="text-red-700 cursor-pointer">delete account</span>

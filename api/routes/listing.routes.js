@@ -5,6 +5,6 @@ import { createListening } from '../controllers/listing.controller.js';
 
 const router= express.Router();
 
-router.post('/create', verifyToken, createListening);
+router.post('/create', createListening);// , verifyToken
 
 export default router;
